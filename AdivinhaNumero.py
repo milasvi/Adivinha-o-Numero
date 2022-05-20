@@ -28,15 +28,15 @@ while True:
     if int(numero) != int(palpite):
         contador = contador + 1
         perdi.play()
-        print(emoji.emojize(f'\nGANHEI! :party_popper: :astonished_face: Você disse {palpite}, mas eu pensei em {numero}. Mais sorte na próxima!'))
+        print(emoji.emojize(f'\n\033[1;31mGANHEI\033[m! :party_popper: :astonished_face: Você disse {palpite}, mas eu pensei em {numero}. Mais sorte na próxima!'))
     elif int(numero) == int(palpite):
         contador2 = contador2 + 1
         ganhei.play()
-        print(emoji.emojize(f'\nUé...mas COMO?!:anger_symbol: :angry_face: Você me venceu...você disse {palpite} e eu pensei em {numero}...'))
+        print(emoji.emojize(f'\nUé...mas COMO?!:anger_symbol: :angry_face: Você me \033[0;32mvenceu\033[m...você disse {palpite} e eu pensei em {numero}...'))
     repeticao = input('\nQuer jogar de novo?').strip()
     while repeticao.upper()[0] != 'S' and repeticao.upper()[0] != 'N':
         repeticao = input(emoji.emojize('Não entendi :thinking_face:, sim ou não?')).strip()
     if repeticao.upper()[0] == 'N':
-        print(emoji.emojize(f'Aah, mas já?:sad_but_relieved_face:\nVocê ganhou {contador2} vez(es) e perdeu {contador} vez(es)!\nObrigade por jogar comigo! '))
+        print(emoji.emojize(f'Aah, mas já?:sad_but_relieved_face:\nVocê ganhou \033[0;32m{contador2}\033[m vez(es) e perdeu \033[0;31m{contador}\033[m vez(es)!\nObrigade por jogar comigo! '))
         encerrei.play()
         break
